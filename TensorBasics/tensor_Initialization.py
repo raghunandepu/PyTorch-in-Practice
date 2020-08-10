@@ -1,4 +1,5 @@
 import torch
+import numpy as np
 
 # ===============================
 #   Initializing tensor
@@ -38,3 +39,29 @@ print(x)
 
 x = torch.linspace(start=0.1, end=1, steps=10)
 print(x)
+
+x = torch.empty(size=(1, 5)).normal_(mean=0, std=1)
+x = torch.empty(size=(1, 5)).uniform_(0, 1)
+print(x)
+
+x = torch.diag(torch.ones(3))
+print(x)
+
+# How to initialize and convert tensors to other data types
+
+tensor = torch.arange(4)
+print(tensor)
+
+print(tensor.bool()) # boolean True/False
+print(tensor.short()) # int16
+print(tensor.long())  # most used
+print(tensor.half())  # float 16 which is not often used
+print(tensor.double()) # float 64
+
+# Array to Tensor conversion and vice-versa
+
+np_array = np.zeros((5, 5))
+tensor = torch.from_numpy(np_array)
+
+np_array_back = tensor.numpy()
+print(np_array_back)
