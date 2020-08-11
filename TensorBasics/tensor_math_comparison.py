@@ -88,5 +88,14 @@ values, indices = torch.max(x, dim=0)
 values, indices = torch.min(x, dim=0)
 abs_x = torch.abs(x)
 z = torch.argmax(x, dim=0)
+z = torch.mean(x.float(), dim=0)
+z = torch.eq(x,y)
+sorted_y,indices = torch.sort(y, dim=0, descending=False)
 
+# values less than x are set to 0 and or which are greater than 10
+z = torch.clamp(x, min=0, max=10)
+
+x = torch.tensor([1,0,1,1,1], dtype=torch.bool)
+z = torch.any(x)
+print(z)
 
