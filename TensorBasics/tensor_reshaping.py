@@ -21,7 +21,7 @@ print(torch.cat((x1, x2), dim=0).shape)  # concat --> result: [4, 5]
 print(torch.cat((x1, x2), dim=1).shape)  # concat --> result: [2, 10]
 
 
-z = x1.view(-1) # flatten x1
+z = x1.view(-1)  # flatten x1
 print(z.shape)
 
 batch = 64
@@ -30,7 +30,7 @@ z = x.view(batch, -1)  # flattening dimensions except batch (first dimension)
 print(z.shape)  # [64, 10]
 
 
-z = x.permute(0, 2, 1,) # reshaping x [64, 2, 5] dimensions
+z = x.permute(0, 2, 1,)  # reshaping x [64, 2, 5] dimensions
 print(z.shape)  # [64, 5, 2]
 
 x = torch.arange(10)
