@@ -1,2 +1,2 @@
-# PyTorch practice
-PyTorch Practice
+# PyTorch in Practice
+PyTorch in Practice
